@@ -16,7 +16,7 @@ bun dev
 
 
 
-Open [https://whatsapp-flow-builder-kxxp.vercel.app/whatsapp-builder] (whatsapp-builder) with your browser to see the flow-builder
+Open [https://whatsapp-flow-builder-1f5w.vercel.app/whatsapp-builder] (whatsapp-builder) with your browser to see the flow-builder
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
