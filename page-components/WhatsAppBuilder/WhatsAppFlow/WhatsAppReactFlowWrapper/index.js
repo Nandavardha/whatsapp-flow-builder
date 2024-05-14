@@ -54,8 +54,6 @@ function WhatsAppReactFlowWrapper() {
 		onEdgesChange,
 	} = useStore(selector);
 
-	console.log({nodes,edges})
-
 // Function which to excute on Drop of Node panel Component
 	const onDrop = useCallback(
 		(event) => {
