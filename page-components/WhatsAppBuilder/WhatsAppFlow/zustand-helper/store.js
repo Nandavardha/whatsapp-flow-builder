@@ -79,6 +79,22 @@ const useStore = createWithEqualityFn((set,get)=>{
 			})
 
 		},
+		deleteNode:(id)=>{
+
+			const filterdNodes=get().nodes.filter((node)=>{
+				return node.id !== id;
+			})
+
+			const filterEdes=get().edges.filter((edge)=>{
+
+				return edge.source !== id && edge.target !== id;
+
+			})
+
+			set({nodes:filterdNodes});
+
+			set({edges:filterEdes});
+		}
 	}
 
 },

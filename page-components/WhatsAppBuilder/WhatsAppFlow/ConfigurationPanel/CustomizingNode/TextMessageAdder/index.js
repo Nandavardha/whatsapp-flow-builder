@@ -24,13 +24,13 @@ function TextMessageAdder({selectedNode}) {
 	useEffect(()=>{
 			// on change of the selectedNode, value is set to the node data.
 			setValue(selectedNode?.data?.text || "")		
-	},[selectedNode.id])
+	},[selectedNode?.id])
 
 
   return (
 	<div className={styles.container}>
 		<div style={{marginBottom:"6px"}}>Text</div>
-		<textarea id={selectedNode.id} name={selectedNode.id} rows="4" cols="36" onChange={handleChange} value={value}>
+		<textarea id={selectedNode?.id} name={selectedNode?.id} rows="4" cols="36" onChange={handleChange} value={value}>
 
 		</textarea>
 

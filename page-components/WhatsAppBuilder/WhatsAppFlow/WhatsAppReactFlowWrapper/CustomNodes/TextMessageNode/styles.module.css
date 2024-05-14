@@ -23,3 +23,9 @@
 	padding:0.5rem;
 	word-wrap: break-word;
 }
+
+.trash{
+	position:absolute;
+	top:-8px;
+	right:-16px;
+}
