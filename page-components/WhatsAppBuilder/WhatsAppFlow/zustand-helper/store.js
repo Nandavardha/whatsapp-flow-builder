@@ -7,6 +7,7 @@ import { applyNodeChanges,MarkerType } from 'reactflow';
 let edgeCount=0;
 
 
+//Zustand Store Initializer;
 const useStore = createWithEqualityFn((set,get)=>{
 
 	return {
@@ -14,21 +15,29 @@ const useStore = createWithEqualityFn((set,get)=>{
 		edges: INITIAL_EDGES,
 		selectedNode:"",
 		onNodesChange:(changes)=>{
+
+			//to track changes in the node state whether it is position changes. 
 			set({
 				nodes: applyNodeChanges(changes, get().nodes),
 			});
 		},
 		addNodes:(node)=>{
+			// setting  new nodes on dropping of the node panel component
 			set({
 				nodes:[...get().nodes,node],
 			})
 		},
 
 		onSelectNode:(id)=>{
+			//To track the selected node;
 			set({selectedNode:id})
 		},
 		onEdgesChange:(changes)=>{
+
+			// To track any change happend to the edges
 			if(changes?.[0]?.type === "remove"){
+
+				//logic to remove the deleted edges
 				const filteredEdges=get().edges.filter((edge)=>{
 					return edge.id !== changes?.[0]?.id;
 				});
@@ -39,6 +48,8 @@ const useStore = createWithEqualityFn((set,get)=>{
 		},
 
 		updateNodeData:({value,selectedNode})=>{
+
+			//Adding the Data to the node on addition of text in node panel 
 			const findNodes=get().nodes.filter((node)=>{
 				return node.id !== selectedNode.id;
 			});
@@ -52,6 +63,8 @@ const useStore = createWithEqualityFn((set,get)=>{
 
 		},
 		onConnect:(connect)=>{
+
+			//logic to add edge between the nodes added source, target and markerEnd;
 			const edge={
 				source: connect.source,
 				target: connect.target,
@@ -68,7 +81,8 @@ const useStore = createWithEqualityFn((set,get)=>{
 		},
 	}
 
-},shallow)
+},
+shallow)
 
 
 export default useStore;

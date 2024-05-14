@@ -6,6 +6,7 @@ import useStore from '../../zustand-helper/store';
 
 function CustomizingNode({selectedNode}) {
 
+	//retrived SelectedNode Data from store.
 	const {selectedNodeData,onSelectNode}=useStore((store)=>{
 
 		return {
@@ -22,6 +23,7 @@ function CustomizingNode({selectedNode}) {
 	<div className={styles.container}>
 		<div className={styles.message_bar}>
 		<FaArrowLeft onClick={()=>{
+			// onClick of Left Arrow removed the selectedNode.
 			onSelectNode("")
 		}}/>
 			<span>Message</span>

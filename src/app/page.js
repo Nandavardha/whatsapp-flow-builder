@@ -1,9 +1,13 @@
+"use client"
+
 import styles from "./page.module.css";
 
-export default function Home() {
+import { WhatsAppFlow as Default } from "../../page-components/WhatsAppBuilder";
+
+export default function Home({params}) {
   return (
-    <main className={styles.main}>
-      
-    </main>
+    
+      <Default params={params}/>
+
   );
 }

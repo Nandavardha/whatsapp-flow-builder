@@ -14,11 +14,15 @@ function TextMessageAdder({selectedNode}) {
 	})
 
 	const handleChange=(event)=>{
-		setValue(event.target.value)
+
+		// setting up the text message for the text-message Node
+		setValue(event.target.value);
+		//updated the node data with the text-message
 		updateNodeData({selectedNode,value:event.target.value})
 	}
 
 	useEffect(()=>{
+			// on change of the selectedNode, value is set to the node data.
 			setValue(selectedNode?.data?.text || "")		
 	},[selectedNode.id])
 

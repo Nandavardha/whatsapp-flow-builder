@@ -8,21 +8,28 @@ function ToolBar() {
 		return {edges:store.edges,nodes:store.nodes}
 	});
 
+	//state to store the error on clicking save changes;
 	const [error,setError]=useState(false)
 
 
 	const handleClick=()=>{
 		const targetNodes =new Set();
+
+		// stroed all the nodes which are targets for edges;
 		edges.forEach((edge)=>{
 			targetNodes.add(edge.target);
 		});
 
+
+		// if targetNodes size is greater - nodes length > 1 and in case of more than 1 node raising the error 
 		if( Math.abs(targetNodes.size - nodes.length) > 1 && nodes.length >1){
 			setError(true);
 		}
 	}
 
 	useEffect(()=>{
+
+		// used set time out to show the error for only 3s after clicking the save button
 		const time=setTimeout(()=>{
 
 			if(error){
@@ -31,6 +38,7 @@ function ToolBar() {
 
 		},3000)
 		return ()=>{
+			// clearing the Timeout on unmount;
 			clearTimeout(time)
 		}
 

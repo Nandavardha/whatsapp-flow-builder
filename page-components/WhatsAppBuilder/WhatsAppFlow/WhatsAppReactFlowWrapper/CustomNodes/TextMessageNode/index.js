@@ -4,7 +4,12 @@ import { Handle, Position } from 'reactflow';
 import useStore from '../../../zustand-helper/store';
 import { FaWhatsapp } from 'react-icons/fa';
 
+
+//custom Node (TextMessageNode) 
+
 function TextMessageNode(props) {
+
+	// Nodes Data is in Props.
 
 	const node=useStore((store)=>{
 		return store.nodes.find((node)=>{
@@ -16,10 +21,16 @@ function TextMessageNode(props) {
 
 	const nodeData=node.data;
 
+
+	// to retrive the selected Node so that can be used for styling.
 	const selectedNode=useStore((store)=>{
 		return store.selectedNode;
-	})
+	});
 
+
+	// added handles for joining two nodes : handels are two type 
+	//1. target 2. source. 
+	// added functionality such that target node can only allow edge ending and source node to start the edge starting point.
   return (
 	<>
 	<div className={styles.container} style={{

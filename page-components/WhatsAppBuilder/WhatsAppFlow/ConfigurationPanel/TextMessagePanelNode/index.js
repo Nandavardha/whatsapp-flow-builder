@@ -3,10 +3,15 @@ import styles from "./styles.module.css";
 import { AiOutlineMessage } from "react-icons/ai";
 
 function TextMessagePanelNode() {
+
+	// Drag event for the TextMessagePanelNode.
 	const onDragStart = (event, nodeType) => {
 		event.dataTransfer.setData('application/reactflow', nodeType);
 		event.dataTransfer.effectAllowed = 'move';
 	  };
+
+	
+	
   return (
 	<div className={styles.container} onDragStart={(event) => onDragStart(event, 'text_message')} draggable>
 		<div style={{alignSelf:"center"}}>

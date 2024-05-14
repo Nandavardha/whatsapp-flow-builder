@@ -14,8 +14,13 @@ function ConfigurationPanel() {
 		}
 
 	})
-	const nodes=getNodes()
 
+	// added a mapper to retrive the node that are to be in the Configuration Panel.
+	// So that we can add the new nodes at one place and can be reflected everywhere.
+
+	const nodes=getNodes();
+
+	// configuration Panel will be in create state when there is no selectedNode.
 	if(isEmpty(selectedNode)){
 
 		return (
@@ -31,7 +36,7 @@ function ConfigurationPanel() {
 
 	}
 
-
+	// configuration Panel will be in configuring state when there in a selectedNode.
 	return <CustomizingNode selectedNode={selectedNode}/>
 
 
