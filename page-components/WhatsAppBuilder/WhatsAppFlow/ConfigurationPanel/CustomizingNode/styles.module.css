@@ -1,0 +1,15 @@
+.container{
+	width:25%;
+	border:1px solid #DEDEDE;
+	height:100vh;
+	padding:1rem;
+}
+
+.message_bar{
+	padding:1rem;
+	text-align: center;
+	border-bottom:1px solid #DEDEDE;
+	display: flex;
+	gap: 100px;
+	cursor: pointer;
+}
